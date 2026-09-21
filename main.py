@@ -32,8 +32,9 @@ def main():
     for entry in feed.entries[:5]:
         title = entry.title
         link = entry.link
-        # 제목과 링크를 결합
-        message += f"🔹 <a href='{link}'>{title}</a>\n\n"
+        
+        # [수정된 부분] 제목 아래에 링크 주소가 직접 글자로 보이도록 변경
+        message += f"🔹 <b>{title}</b>\n🔗 {link}\n\n"
         
     # 텔레그램으로 전송
     send_telegram_message(message)
